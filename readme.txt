@@ -1,15 +1,15 @@
-=== ZepBlocks ===
+=== ZepBlocks - Powerful Gutenberg Block for WordPress ===
 
 Contributors: rejuancse
-Tags: gutenberg, blocks, block editor, woocommerce, photo gallery
+Tags: blocks, block-editor, dynamic content, patterns, landing page,
 Requires at least: 5.9
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A lightweight collection of beautiful, flexible Gutenberg blocks — including sliders, galleries, timelines, and WooCommerce blocks.
+ZepBlocks adds beautiful Gutenberg blocks, patterns, and templates to help you create stunning WordPress pages easily—no page builder needed.
 
 == Description ==
 
@@ -126,6 +126,15 @@ You can submit block requests via the [WordPress.org support forum](https://word
 5. WooCommerce Category Grid and Product List blocks
 
 == Changelog ==
+
+= 1.0.1 =
+* New: Breaking News block
+* New: Count Down block
+* Security: Input sanitization hardening and Google Fonts URL encoding
+* Fix: Missing import issue in Image Compare and Feature blocks
+* Fix: Untranslated strings made translation-ready
+* Compatibility: Tested up to WordPress 7.1
+* Code quality: WordPress Coding Standards (WPCS) compliance and docblock improvements
 
 = 1.0.0 =
 * Initial release
