@@ -1,1 +1,554 @@
-(()=>{"use strict";var e,t={846(){const e=window.wp.i18n,t=window.wp.blocks,l=JSON.parse('{"apiVersion":3,"name":"zepblock/feature-block","title":"Feature Block","category":"zepblock-block","icon":"star-filled","description":"Display features/services with icon, title and description","keywords":["feature","service","icon","highlight"],"attributes":{"icon":{"type":"string","default":"star-filled"},"iconLibrary":{"type":"string","default":"dashicons"},"title":{"type":"string","default":"Feature Title"},"description":{"type":"string","default":"Add a compelling description for your feature or service here."},"link":{"type":"string","default":""},"openInNewTab":{"type":"boolean","default":false},"iconColor":{"type":"string","default":"#667eea"},"iconBgColor":{"type":"string","default":"#f0f4ff"},"alignment":{"type":"string","default":"left"},"showIcon":{"type":"boolean","default":true},"showLink":{"type":"boolean","default":false}},"supports":{"align":true,"html":false},"editorScript":"file:./index.js","style":"file:./style-index.css"}'),o=window.React,n=window.wp.blockEditor,a=window.wp.components,r=["star-filled","heart","smiley","thumbs-up","awards","businessperson","cart","clipboard","database","desktop","email","flag","format-image","format-video","games","groups","hammer","heart","image-filter","info","lightbulb","location","lock","media-code","music","networking","phone","portfolio","shield","shield-alt","sos","sports","tablet","translation","visibility","warning","welcome-comments","wordpress","yes"];(0,t.registerBlockType)(l.name,{...l,title:(0,e.__)("Zepblock Feature Block","zepblocks"),description:(0,e.__)("Display features/services with icon, title and description","zepblocks"),edit:function({attributes:t,setAttributes:l}){const{icon:i="star-filled",iconLibrary:c="dashicons",title:s="Feature Title",description:p="Add a compelling description for your feature or service here.",link:b="",openInNewTab:f=!1,iconColor:d="#667eea",iconBgColor:m="#f0f4ff",alignment:u="left",showIcon:g=!0,showLink:k=!1}=t,h=(0,n.useBlockProps)();return(0,o.createElement)(o.Fragment,null,(0,o.createElement)(n.InspectorControls,null,(0,o.createElement)(a.PanelBody,{title:(0,e.__)("Feature Content","zepblocks"),initialOpen:!0},(0,o.createElement)(a.PanelRow,null,(0,o.createElement)(a.SelectControl,{label:(0,e.__)("Icon","zepblocks"),value:i,options:r.map(e=>({label:e.replace(/-/g," ").replace(/\b\w/g,e=>e.toUpperCase()),value:e})),onChange:e=>l({icon:e})})),(0,o.createElement)(a.PanelRow,null,(0,o.createElement)(a.TextControl,{label:(0,e.__)("Title","zepblocks"),value:s,onChange:e=>l({title:e})})),(0,o.createElement)(a.PanelRow,null,(0,o.createElement)(a.TextareaControl,{label:(0,e.__)("Description","zepblocks"),value:p,onChange:e=>l({description:e}),rows:3})),(0,o.createElement)(a.PanelRow,null,(0,o.createElement)(a.TextControl,{label:(0,e.__)("Link (Optional)","zepblocks"),value:b,onChange:e=>l({link:e}),placeholder:(0,e.__)("https://example.com","zepblocks")})),b&&(0,o.createElement)(a.PanelRow,null,(0,o.createElement)(a.ToggleControl,{label:(0,e.__)("Open in New Tab","zepblocks"),checked:f,onChange:()=>l({openInNewTab:!f})}))),(0,o.createElement)(a.PanelBody,{title:(0,e.__)("Icon Style","zepblocks"),initialOpen:!1},(0,o.createElement)(n.PanelColorSettings,{title:(0,e.__)("Icon Colors","zepblocks"),colorSettings:[{value:d,onChange:e=>l({iconColor:e}),label:(0,e.__)("Icon Color","zepblocks")},{value:m,onChange:e=>l({iconBgColor:e}),label:(0,e.__)("Icon Background","zepblocks")}]})),(0,o.createElement)(a.PanelBody,{title:(0,e.__)("Display Options","zepblocks"),initialOpen:!1},(0,o.createElement)(a.ToggleControl,{label:(0,e.__)("Show Icon","zepblocks"),checked:g,onChange:()=>l({showIcon:!g})}),b&&(0,o.createElement)(a.ToggleControl,{label:(0,e.__)("Show Link Button","zepblocks"),checked:k,onChange:()=>l({showLink:!k})}),(0,o.createElement)(a.SelectControl,{label:(0,e.__)("Alignment","zepblocks"),value:u,options:[{label:(0,e.__)("Left","zepblocks"),value:"left"},{label:(0,e.__)("Center","zepblocks"),value:"center"},{label:(0,e.__)("Right","zepblocks"),value:"right"}],onChange:e=>l({alignment:e})}))),(0,o.createElement)("div",{...h},(0,o.createElement)("div",{className:`fb-feature fb-align-${u}`},(0,o.createElement)("div",{className:"fb-feature-inner"},g&&(0,o.createElement)("div",{className:"fb-icon-wrapper",style:{backgroundColor:m}},(0,o.createElement)(a.Dashicon,{icon:i,size:40,style:{color:d}})),(0,o.createElement)("div",{className:"fb-content"},(0,o.createElement)("h3",{className:"fb-title"},s),(0,o.createElement)("p",{className:"fb-description"},p),k&&b&&(0,o.createElement)("a",{href:b,className:"fb-link",target:f?"_blank":"_self",rel:f?"noopener noreferrer":void 0},(0,e.__)("Learn More →","zepblocks")))))))},save:function({attributes:t}){const{icon:l="star-filled",title:r="Feature Title",description:i="Add a compelling description for your feature or service here.",link:c="",openInNewTab:s=!1,iconColor:p="#667eea",iconBgColor:b="#f0f4ff",alignment:f="left",showIcon:d=!0,showLink:m=!1}=t,u=n.useBlockProps.save(),g=c&&!m?"a":"div",k=c&&!m?{href:c,target:s?"_blank":void 0,rel:s?"noopener noreferrer":void 0,className:"fb-feature fb-linked"}:{className:`fb-feature fb-align-${f}`};return(0,o.createElement)("div",{...u},(0,o.createElement)(g,{...k},(0,o.createElement)("div",{className:"fb-feature-inner"},d&&(0,o.createElement)("div",{className:"fb-icon-wrapper",style:{backgroundColor:b}},(0,o.createElement)(a.Dashicon,{icon:l,size:40,style:{color:p}})),(0,o.createElement)("div",{className:"fb-content"},(0,o.createElement)("h3",{className:"fb-title"},r),(0,o.createElement)("p",{className:"fb-description"},i),m&&c&&(0,o.createElement)("a",{href:c,className:"fb-link",target:s?"_blank":void 0,rel:s?"noopener noreferrer":void 0},(0,e.__)("Learn More →","zepblocks"))))))}})}},l={};function o(e){var n=l[e];if(void 0!==n)return n.exports;var a=l[e]={exports:{}};return t[e](a,a.exports,o),a.exports}o.m=t,e=[],o.O=(t,l,n,a)=>{if(!l){var r=1/0;for(p=0;p<e.length;p++){for(var[l,n,a]=e[p],i=!0,c=0;c<l.length;c++)(!1&a||r>=a)&&Object.keys(o.O).every(e=>o.O[e](l[c]))?l.splice(c--,1):(i=!1,a<r&&(r=a));if(i){e.splice(p--,1);var s=n();void 0!==s&&(t=s)}}return t}a=a||0;for(var p=e.length;p>0&&e[p-1][2]>a;p--)e[p]=e[p-1];e[p]=[l,n,a]},o.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),(()=>{var e={714:0,726:0};o.O.j=t=>0===e[t];var t=(t,l)=>{var n,a,[r,i,c]=l,s=0;if(r.some(t=>0!==e[t])){for(n in i)o.o(i,n)&&(o.m[n]=i[n]);if(c)var p=c(o)}for(t&&t(l);s<r.length;s++)a=r[s],o.o(e,a)&&e[a]&&e[a][0](),e[a]=0;return o.O(p)},l=globalThis.webpackChunkzepblocks=globalThis.webpackChunkzepblocks||[];l.forEach(t.bind(null,0)),l.push=t.bind(null,l.push.bind(l))})();var n=o.O(void 0,[726],()=>o(846));n=o.O(n)})();
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/feature-block/edit.js"
+/*!***********************************!*\
+  !*** ./src/feature-block/edit.js ***!
+  \***********************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Edit)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
+
+/**
+ * WordPress Dependencies
+ */
+
+
+
+
+
+// Common Dashicons list
+const DASHICONS = ['star-filled', 'heart', 'smiley', 'thumbs-up', 'awards', 'businessperson', 'cart', 'clipboard', 'database', 'desktop', 'email', 'flag', 'format-image', 'format-video', 'games', 'groups', 'hammer', 'heart', 'image-filter', 'info', 'lightbulb', 'location', 'lock', 'media-code', 'music', 'networking', 'phone', 'portfolio', 'shield', 'shield-alt', 'sos', 'sports', 'tablet', 'translation', 'visibility', 'warning', 'welcome-comments', 'wordpress', 'yes'];
+
+/**
+ * Edit Component
+ */
+function Edit({
+  attributes,
+  setAttributes
+}) {
+  const {
+    icon = 'star-filled',
+    iconLibrary = 'dashicons',
+    title = 'Feature Title',
+    description = 'Add a compelling description for your feature or service here.',
+    link = '',
+    openInNewTab = false,
+    iconColor = '#667eea',
+    iconBgColor = '#f0f4ff',
+    alignment = 'left',
+    showIcon = true,
+    showLink = false
+  } = attributes;
+  const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)();
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Feature Content', 'zepblocks'),
+    initialOpen: true
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Icon', 'zepblocks'),
+    value: icon,
+    options: DASHICONS.map(d => ({
+      label: d.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
+      value: d
+    })),
+    onChange: value => setAttributes({
+      icon: value
+    })
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Title', 'zepblocks'),
+    value: title,
+    onChange: value => setAttributes({
+      title: value
+    })
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextareaControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Description', 'zepblocks'),
+    value: description,
+    onChange: value => setAttributes({
+      description: value
+    }),
+    rows: 3
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Link (Optional)', 'zepblocks'),
+    value: link,
+    onChange: value => setAttributes({
+      link: value
+    }),
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('https://example.com', 'zepblocks')
+  })), link && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Open in New Tab', 'zepblocks'),
+    checked: openInNewTab,
+    onChange: () => setAttributes({
+      openInNewTab: !openInNewTab
+    })
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Icon Style', 'zepblocks'),
+    initialOpen: false
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Icon Colors', 'zepblocks'),
+    colorSettings: [{
+      value: iconColor,
+      onChange: color => setAttributes({
+        iconColor: color
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Icon Color', 'zepblocks')
+    }, {
+      value: iconBgColor,
+      onChange: color => setAttributes({
+        iconBgColor: color
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Icon Background', 'zepblocks')
+    }]
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Display Options', 'zepblocks'),
+    initialOpen: false
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Show Icon', 'zepblocks'),
+    checked: showIcon,
+    onChange: () => setAttributes({
+      showIcon: !showIcon
+    })
+  }), link && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Show Link Button', 'zepblocks'),
+    checked: showLink,
+    onChange: () => setAttributes({
+      showLink: !showLink
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Alignment', 'zepblocks'),
+    value: alignment,
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Left', 'zepblocks'),
+      value: 'left'
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Center', 'zepblocks'),
+      value: 'center'
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Right', 'zepblocks'),
+      value: 'right'
+    }],
+    onChange: value => setAttributes({
+      alignment: value
+    })
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    ...blockProps
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: `fb-feature fb-align-${alignment}`
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "fb-feature-inner"
+  }, showIcon && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "fb-icon-wrapper",
+    style: {
+      backgroundColor: iconBgColor
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Dashicon, {
+    icon: icon,
+    size: 40,
+    style: {
+      color: iconColor
+    }
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "fb-content"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+    className: "fb-title"
+  }, title), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "fb-description"
+  }, description), showLink && link && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: link,
+    className: "fb-link",
+    target: openInNewTab ? '_blank' : '_self',
+    rel: openInNewTab ? 'noopener noreferrer' : undefined
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Learn More →', 'zepblocks')))))));
+}
+
+/***/ },
+
+/***/ "./src/feature-block/index.js"
+/*!************************************!*\
+  !*** ./src/feature-block/index.js ***!
+  \************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./block.json */ "./src/feature-block/block.json");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./edit */ "./src/feature-block/edit.js");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./save */ "./src/feature-block/save.js");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./style.scss */ "./src/feature-block/style.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./editor.scss */ "./src/feature-block/editor.scss");
+/**
+ * WordPress Dependencies
+ */
+
+
+
+/**
+ * Internal Dependencies
+ */
+
+
+
+
+/**
+ * Styles - WordPress webpack will process these
+ */
+
+
+
+/**
+ * Register Block
+ */
+(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_2__.name, {
+  ..._block_json__WEBPACK_IMPORTED_MODULE_2__,
+  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Zepblock Feature Block', 'zepblocks'),
+  description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Display features/services with icon, title and description', 'zepblocks'),
+  edit: _edit__WEBPACK_IMPORTED_MODULE_3__["default"],
+  save: _save__WEBPACK_IMPORTED_MODULE_4__["default"]
+});
+
+/***/ },
+
+/***/ "./src/feature-block/save.js"
+/*!***********************************!*\
+  !*** ./src/feature-block/save.js ***!
+  \***********************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Save)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
+
+/**
+ * WordPress Dependencies
+ */
+
+
+
+
+/**
+ * Save Component
+ */
+function Save({
+  attributes
+}) {
+  const {
+    icon = 'star-filled',
+    title = 'Feature Title',
+    description = 'Add a compelling description for your feature or service here.',
+    link = '',
+    openInNewTab = false,
+    iconColor = '#667eea',
+    iconBgColor = '#f0f4ff',
+    alignment = 'left',
+    showIcon = true,
+    showLink = false
+  } = attributes;
+  const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save();
+  const Wrapper = link && !showLink ? 'a' : 'div';
+  const wrapperProps = link && !showLink ? {
+    href: link,
+    target: openInNewTab ? '_blank' : undefined,
+    rel: openInNewTab ? 'noopener noreferrer' : undefined,
+    className: 'fb-feature fb-linked'
+  } : {
+    className: `fb-feature fb-align-${alignment}`
+  };
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    ...blockProps
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(Wrapper, {
+    ...wrapperProps
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "fb-feature-inner"
+  }, showIcon && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "fb-icon-wrapper",
+    style: {
+      backgroundColor: iconBgColor
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Dashicon, {
+    icon: icon,
+    size: 40,
+    style: {
+      color: iconColor
+    }
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "fb-content"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+    className: "fb-title"
+  }, title), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "fb-description"
+  }, description), showLink && link && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: link,
+    className: "fb-link",
+    target: openInNewTab ? '_blank' : undefined,
+    rel: openInNewTab ? 'noopener noreferrer' : undefined
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Learn More →', 'zepblocks'))))));
+}
+
+/***/ },
+
+/***/ "./src/feature-block/editor.scss"
+/*!***************************************!*\
+  !*** ./src/feature-block/editor.scss ***!
+  \***************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ },
+
+/***/ "./src/feature-block/style.scss"
+/*!**************************************!*\
+  !*** ./src/feature-block/style.scss ***!
+  \**************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ },
+
+/***/ "react"
+/*!************************!*\
+  !*** external "React" ***!
+  \************************/
+(module) {
+
+module.exports = window["React"];
+
+/***/ },
+
+/***/ "@wordpress/block-editor"
+/*!*************************************!*\
+  !*** external ["wp","blockEditor"] ***!
+  \*************************************/
+(module) {
+
+module.exports = window["wp"]["blockEditor"];
+
+/***/ },
+
+/***/ "@wordpress/blocks"
+/*!********************************!*\
+  !*** external ["wp","blocks"] ***!
+  \********************************/
+(module) {
+
+module.exports = window["wp"]["blocks"];
+
+/***/ },
+
+/***/ "@wordpress/components"
+/*!************************************!*\
+  !*** external ["wp","components"] ***!
+  \************************************/
+(module) {
+
+module.exports = window["wp"]["components"];
+
+/***/ },
+
+/***/ "@wordpress/i18n"
+/*!******************************!*\
+  !*** external ["wp","i18n"] ***!
+  \******************************/
+(module) {
+
+module.exports = window["wp"]["i18n"];
+
+/***/ },
+
+/***/ "./src/feature-block/block.json"
+/*!**************************************!*\
+  !*** ./src/feature-block/block.json ***!
+  \**************************************/
+(module) {
+
+module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":3,"name":"zepblock/feature-block","title":"Feature Block","category":"zepblock-block","icon":"star-filled","description":"Display features/services with icon, title and description","keywords":["feature","service","icon","highlight"],"attributes":{"icon":{"type":"string","default":"star-filled"},"iconLibrary":{"type":"string","default":"dashicons"},"title":{"type":"string","default":"Feature Title"},"description":{"type":"string","default":"Add a compelling description for your feature or service here."},"link":{"type":"string","default":""},"openInNewTab":{"type":"boolean","default":false},"iconColor":{"type":"string","default":"#667eea"},"iconBgColor":{"type":"string","default":"#f0f4ff"},"alignment":{"type":"string","default":"left"},"showIcon":{"type":"boolean","default":true},"showLink":{"type":"boolean","default":false}},"supports":{"align":true,"html":false},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
+
+/***/ }
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	const __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		const cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		const module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		if (!(moduleId in __webpack_modules__)) {
+/******/ 			delete __webpack_module_cache__[moduleId];
+/******/ 			const e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			e.code = 'MODULE_NOT_FOUND';
+/******/ 			throw e;
+/******/ 		}
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		const deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn) => {
+/******/ 			if(chunkIds) {
+/******/ 				deferred.push([chunkIds, fn]);
+/******/ 				return;
+/******/ 			}
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				let [chunkIds, fn] = deferred[i];
+/******/ 				let fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if (__webpack_require__.O.j(chunkIds[j])) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					const r = fn();
+/******/ 					if (r !== undefined) result = r;
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = (module) => {
+/******/ 		const getter = module && module.__esModule ?
+/******/ 			() => (module['default']) :
+/******/ 			() => (module);
+/******/ 		__webpack_require__.d(getter, { a: getter });
+/******/ 		return getter;
+/******/ 	};
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	// define getter/value functions for harmony exports
+/******/ 	__webpack_require__.d = (exports, definition) => {
+/******/ 		for(var key in definition) {
+/******/ 			if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 				Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 			}
+/******/ 		}
+/******/ 	};
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	__webpack_require__.o = (obj, prop) => (Object.hasOwn(obj, prop));
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = (exports) => {
+/******/ 		Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		const installedChunks = {
+/******/ 			"feature-block/index": 0,
+/******/ 			"feature-block/style-index": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		const webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			let [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 			return __webpack_require__.O(result);
+/******/ 		}
+/******/ 		
+/******/ 		const chunkLoadingGlobal = globalThis["webpackChunkzepblocks"] ||= [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	let __webpack_exports__ = __webpack_require__.O(undefined, ["feature-block/style-index"], () => (__webpack_require__("./src/feature-block/index.js")))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	
+/******/ })()
+;
+//# sourceMappingURL=index.js.map

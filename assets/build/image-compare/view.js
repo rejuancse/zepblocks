@@ -1,1 +1,37 @@
-(()=>{function e(){document.querySelectorAll(".zepblock-image-slider").forEach(e=>{const t=e.closest(".zepblock-image-comparison");if(!t)return;const o=t.querySelector(".zepblock-image-handle"),n=t.querySelector(".zepblock-image-divisor");if(!o||!n)return;const l=()=>{o.style.left=e.value+"%",n.style.width=e.value+"%"};l(),e.addEventListener("input",l)})}"loading"===document.readyState?document.addEventListener("DOMContentLoaded",e):e()})();
+/******/ (() => { // webpackBootstrap
+/*!***********************************!*\
+  !*** ./src/image-compare/view.js ***!
+  \***********************************/
+/**
+ * Frontend functionality for image comparison slider
+ */
+function initImageCompare() {
+  const sliders = document.querySelectorAll('.zepblock-image-slider');
+  sliders.forEach(slider => {
+    const wrapper = slider.closest('.zepblock-image-comparison');
+    if (!wrapper) return;
+    const handle = wrapper.querySelector('.zepblock-image-handle');
+    const divisor = wrapper.querySelector('.zepblock-image-divisor');
+    if (!handle || !divisor) return;
+    const moveDivisor = () => {
+      handle.style.left = slider.value + '%';
+      divisor.style.width = slider.value + '%';
+    };
+
+    // Initialize position
+    moveDivisor();
+
+    // Add event listener
+    slider.addEventListener('input', moveDivisor);
+  });
+}
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initImageCompare);
+} else {
+  initImageCompare();
+}
+/******/ })()
+;
+//# sourceMappingURL=view.js.map
