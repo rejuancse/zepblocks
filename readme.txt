@@ -127,6 +127,15 @@ You can submit block requests via the [WordPress.org support forum](https://word
 
 == Changelog ==
 
+= 1.0.1 =
+* New: Breaking News block
+* New: Count Down block
+* Security: Input sanitization hardening and Google Fonts URL encoding
+* Fix: Missing import issue in Image Compare and Feature blocks
+* Fix: Untranslated strings made translation-ready
+* Compatibility: Tested up to WordPress 7.1
+* Code quality: WordPress Coding Standards (WPCS) compliance and docblock improvements
+
 = 1.0.0 =
 * Initial release
 * 10 blocks included: Zepblock Slider, Zepblock Timeline, Card Block, Feature Block, Hero Video, Image Compare, Photo Gallery, Post Block, WooCommerce Category Grid, WooCommerce Product List
