@@ -87,7 +87,7 @@ class Woo_Product_List {
 
 		// Filter by selected categories.
 		if ( ! empty( $selected_categories ) ) {
-			$tax_query = array(
+			$tax_query               = array(
 				array(
 					'taxonomy' => 'product_cat',
 					'field'    => 'term_id',

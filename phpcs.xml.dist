@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<ruleset name="ZepBlocks">
+	<description>Coding standards for the ZepBlocks plugin.</description>
+
+	<file>./zepblocks.php</file>
+	<file>./includes</file>
+	<file>./src</file>
+
+	<arg name="basepath" value="."/>
+	<arg name="colors"/>
+	<arg name="extensions" value="php"/>
+	<arg value="sp"/>
+
+	<rule ref="WordPress"/>
+
+	<config name="minimum_supported_wp_version" value="5.9"/>
+
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="zepblocks"/>
+			</property>
+		</properties>
+	</rule>
+</ruleset>

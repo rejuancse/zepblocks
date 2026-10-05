@@ -21,6 +21,14 @@ build/Release
 # Dependency directories
 node_modules/
 
+# PHPCS/WPCS dev tooling - installed via `composer install`, not committed
+/vendor/bin/phpcs
+/vendor/bin/phpcbf
+/vendor/squizlabs/
+/vendor/wp-coding-standards/
+/vendor/phpcsstandards/
+/vendor/dealerdirect/
+
 # Optional npm cache directory
 .npm
 

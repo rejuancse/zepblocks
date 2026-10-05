@@ -23,30 +23,30 @@ call_user_func(
 		$description_font_size  = $attributes['descriptionFontSize'] ?? 18;
 		$description_font_weight = $attributes['descriptionFontWeight'] ?? '400';
 		$description_font_family = $attributes['descriptionFontFamily'] ?? '';
-		$button_bg_color        = $attributes['buttonBgColor'] ?? '#ffffff';
-		$button_text_color      = $attributes['buttonTextColor'] ?? '#333333';
-		$button_hover_bg_color  = $attributes['buttonHoverBgColor'] ?? '#f0f0f0';
+		$button_bg_color         = $attributes['buttonBgColor'] ?? '#ffffff';
+		$button_text_color       = $attributes['buttonTextColor'] ?? '#333333';
+		$button_hover_bg_color   = $attributes['buttonHoverBgColor'] ?? '#f0f0f0';
 		$button_hover_text_color = $attributes['buttonHoverTextColor'] ?? '#333333';
-		$button_font_size       = $attributes['buttonFontSize'] ?? 16;
-		$button_font_weight     = $attributes['buttonFontWeight'] ?? '600';
-		$button_font_family     = $attributes['buttonFontFamily'] ?? '';
-		$overlay_color          = $attributes['overlayColor'] ?? '#000000';
-		$overlay_opacity        = $attributes['overlayOpacity'] ?? 40;
-		$video_height           = $attributes['videoHeight'] ?? 600;
-		$content_align          = $attributes['contentAlign'] ?? 'center';
-		$padding                = $attributes['padding'] ?? 80;
-		$border_radius          = $attributes['borderRadius'] ?? 0;
-		$muted                  = $attributes['muted'] ?? true;
-		$autoplay               = $attributes['autoplay'] ?? true;
-		$loop                   = $attributes['loop'] ?? true;
+		$button_font_size        = $attributes['buttonFontSize'] ?? 16;
+		$button_font_weight      = $attributes['buttonFontWeight'] ?? '600';
+		$button_font_family      = $attributes['buttonFontFamily'] ?? '';
+		$overlay_color           = $attributes['overlayColor'] ?? '#000000';
+		$overlay_opacity         = $attributes['overlayOpacity'] ?? 40;
+		$video_height            = $attributes['videoHeight'] ?? 600;
+		$content_align           = $attributes['contentAlign'] ?? 'center';
+		$padding                 = $attributes['padding'] ?? 80;
+		$border_radius           = $attributes['borderRadius'] ?? 0;
+		$muted                   = $attributes['muted'] ?? true;
+		$autoplay                = $attributes['autoplay'] ?? true;
+		$loop                    = $attributes['loop'] ?? true;
 
 		// Convert overlay color and opacity to rgba
 		$overlay_opacity_decimal = $overlay_opacity / 100;
 		if ( strpos( $overlay_color, '#' ) === 0 ) {
-			$hex = str_replace( '#', '', $overlay_color );
-			$r   = hexdec( substr( $hex, 0, 2 ) );
-			$g   = hexdec( substr( $hex, 2, 2 ) );
-			$b   = hexdec( substr( $hex, 4, 2 ) );
+			$hex                = str_replace( '#', '', $overlay_color );
+			$r                  = hexdec( substr( $hex, 0, 2 ) );
+			$g                  = hexdec( substr( $hex, 2, 2 ) );
+			$b                  = hexdec( substr( $hex, 4, 2 ) );
 			$overlay_color_rgba = "rgba({$r}, {$g}, {$b}, {$overlay_opacity_decimal})";
 		} else {
 			// If already rgb/rgba, replace opacity
@@ -106,11 +106,11 @@ call_user_func(
 			<div class="hero-video">
 				<?php if ( ! empty( $video_url ) ) : ?>
 					<video class="video-bg"
-						   <?php echo ! empty( $poster_url ) ? sprintf( 'poster="%s"', esc_url( $poster_url ) ) : ''; ?>
-						   <?php echo $muted ? 'muted' : ''; ?>
-						   <?php echo $autoplay ? 'autoplay' : ''; ?>
-						   <?php echo $loop ? 'loop' : ''; ?>
-						   playsinline>
+							<?php echo ! empty( $poster_url ) ? sprintf( 'poster="%s"', esc_url( $poster_url ) ) : ''; ?>
+							<?php echo $muted ? 'muted' : ''; ?>
+							<?php echo $autoplay ? 'autoplay' : ''; ?>
+							<?php echo $loop ? 'loop' : ''; ?>
+							playsinline>
 						<source src="<?php echo esc_url( $video_url ); ?>" type="video/mp4">
 					</video>
 					<div class="video-overlay" style="background-color: <?php echo esc_attr( $overlay_color_rgba ); ?>;"></div>
