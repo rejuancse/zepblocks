@@ -1,0 +1,16 @@
+.distignore
+.git
+.gitignore
+.phpunit.result.cache
+assets/build/**/*.map
+composer.json
+composer.lock
+node_modules
+package-lock.json
+package.json
+phpcs.xml.dist
+phpunit.xml.dist
+README.md
+setup-tests.sh
+tests
+webpack.config.js

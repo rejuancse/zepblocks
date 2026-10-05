@@ -42,10 +42,21 @@ class Post_Block {
 
 		// Allow named colors from safe list
 		$safe_colors = array(
-			'inherit', 'transparent', 'currentColor',
-			'black', 'white', 'gray', 'silver',
-			'red', 'green', 'blue', 'yellow',
-			'orange', 'purple', 'pink', 'cyan'
+			'inherit',
+			'transparent',
+			'currentColor',
+			'black',
+			'white',
+			'gray',
+			'silver',
+			'red',
+			'green',
+			'blue',
+			'yellow',
+			'orange',
+			'purple',
+			'pink',
+			'cyan',
 		);
 
 		if ( in_array( strtolower( $color ), $safe_colors, true ) ) {
@@ -112,81 +123,81 @@ class Post_Block {
 		$zepblocks_categories        = isset( $attributes['categories'] ) ? $attributes['categories'] : array();
 
 		// Style attributes
-		$zepblocks_title_color          = isset( $attributes['titleColor'] ) ? self::sanitize_css_color( $attributes['titleColor'] ) : '#333333';
-		$zepblocks_title_font_size      = isset( $attributes['titleFontSize'] ) ? intval( $attributes['titleFontSize'] ) : 22;
-		$zepblocks_title_font_weight    = isset( $attributes['titleFontWeight'] ) ? sanitize_text_field( $attributes['titleFontWeight'] ) : '600';
-		$zepblocks_title_font_family    = isset( $attributes['titleFontFamily'] ) ? sanitize_text_field( $attributes['titleFontFamily'] ) : '';
+		$zepblocks_title_color       = isset( $attributes['titleColor'] ) ? self::sanitize_css_color( $attributes['titleColor'] ) : '#333333';
+		$zepblocks_title_font_size   = isset( $attributes['titleFontSize'] ) ? intval( $attributes['titleFontSize'] ) : 22;
+		$zepblocks_title_font_weight = isset( $attributes['titleFontWeight'] ) ? sanitize_text_field( $attributes['titleFontWeight'] ) : '600';
+		$zepblocks_title_font_family = isset( $attributes['titleFontFamily'] ) ? sanitize_text_field( $attributes['titleFontFamily'] ) : '';
 
-		$zepblocks_excerpt_color        = isset( $attributes['excerptColor'] ) ? self::sanitize_css_color( $attributes['excerptColor'] ) : '#555555';
-		$zepblocks_excerpt_font_size    = isset( $attributes['excerptFontSize'] ) ? intval( $attributes['excerptFontSize'] ) : 15;
-		$zepblocks_excerpt_font_weight  = isset( $attributes['excerptFontWeight'] ) ? sanitize_text_field( $attributes['excerptFontWeight'] ) : '400';
-		$zepblocks_excerpt_font_family  = isset( $attributes['excerptFontFamily'] ) ? sanitize_text_field( $attributes['excerptFontFamily'] ) : '';
-		$zepblocks_excerpt_max_chars    = isset( $attributes['excerptMaxChars'] ) ? intval( $attributes['excerptMaxChars'] ) : 0;
+		$zepblocks_excerpt_color       = isset( $attributes['excerptColor'] ) ? self::sanitize_css_color( $attributes['excerptColor'] ) : '#555555';
+		$zepblocks_excerpt_font_size   = isset( $attributes['excerptFontSize'] ) ? intval( $attributes['excerptFontSize'] ) : 15;
+		$zepblocks_excerpt_font_weight = isset( $attributes['excerptFontWeight'] ) ? sanitize_text_field( $attributes['excerptFontWeight'] ) : '400';
+		$zepblocks_excerpt_font_family = isset( $attributes['excerptFontFamily'] ) ? sanitize_text_field( $attributes['excerptFontFamily'] ) : '';
+		$zepblocks_excerpt_max_chars   = isset( $attributes['excerptMaxChars'] ) ? intval( $attributes['excerptMaxChars'] ) : 0;
 
-		$zepblocks_meta_color           = isset( $attributes['metaColor'] ) ? self::sanitize_css_color( $attributes['metaColor'] ) : '#666666';
-		$zepblocks_meta_font_size       = isset( $attributes['metaFontSize'] ) ? intval( $attributes['metaFontSize'] ) : 14;
-		$zepblocks_meta_font_weight     = isset( $attributes['metaFontWeight'] ) ? sanitize_text_field( $attributes['metaFontWeight'] ) : '400';
-		$zepblocks_meta_font_family     = isset( $attributes['metaFontFamily'] ) ? sanitize_text_field( $attributes['metaFontFamily'] ) : '';
+		$zepblocks_meta_color       = isset( $attributes['metaColor'] ) ? self::sanitize_css_color( $attributes['metaColor'] ) : '#666666';
+		$zepblocks_meta_font_size   = isset( $attributes['metaFontSize'] ) ? intval( $attributes['metaFontSize'] ) : 14;
+		$zepblocks_meta_font_weight = isset( $attributes['metaFontWeight'] ) ? sanitize_text_field( $attributes['metaFontWeight'] ) : '400';
+		$zepblocks_meta_font_family = isset( $attributes['metaFontFamily'] ) ? sanitize_text_field( $attributes['metaFontFamily'] ) : '';
 
-		$zepblocks_link_color           = isset( $attributes['linkColor'] ) ? self::sanitize_css_color( $attributes['linkColor'] ) : '#0073aa';
-		$zepblocks_link_hover_color     = isset( $attributes['linkHoverColor'] ) ? self::sanitize_css_color( $attributes['linkHoverColor'] ) : '#005177';
-		$zepblocks_link_font_size       = isset( $attributes['linkFontSize'] ) ? intval( $attributes['linkFontSize'] ) : 14;
-		$zepblocks_link_font_weight     = isset( $attributes['linkFontWeight'] ) ? sanitize_text_field( $attributes['linkFontWeight'] ) : '600';
-		$zepblocks_link_font_family     = isset( $attributes['linkFontFamily'] ) ? sanitize_text_field( $attributes['linkFontFamily'] ) : '';
+		$zepblocks_link_color       = isset( $attributes['linkColor'] ) ? self::sanitize_css_color( $attributes['linkColor'] ) : '#0073aa';
+		$zepblocks_link_hover_color = isset( $attributes['linkHoverColor'] ) ? self::sanitize_css_color( $attributes['linkHoverColor'] ) : '#005177';
+		$zepblocks_link_font_size   = isset( $attributes['linkFontSize'] ) ? intval( $attributes['linkFontSize'] ) : 14;
+		$zepblocks_link_font_weight = isset( $attributes['linkFontWeight'] ) ? sanitize_text_field( $attributes['linkFontWeight'] ) : '600';
+		$zepblocks_link_font_family = isset( $attributes['linkFontFamily'] ) ? sanitize_text_field( $attributes['linkFontFamily'] ) : '';
 
-		$zepblocks_card_bg_color        = isset( $attributes['cardBgColor'] ) ? self::sanitize_css_color( $attributes['cardBgColor'] ) : '#ffffff';
-		$zepblocks_card_border          = isset( $attributes['cardBorder'] ) ? sanitize_text_field( $attributes['cardBorder'] ) : 'none';
-		$zepblocks_card_border_radius   = isset( $attributes['cardBorderRadius'] ) ? intval( $attributes['cardBorderRadius'] ) : 8;
-		$zepblocks_card_padding         = isset( $attributes['cardPadding'] ) ? intval( $attributes['cardPadding'] ) : 20;
+		$zepblocks_card_bg_color      = isset( $attributes['cardBgColor'] ) ? self::sanitize_css_color( $attributes['cardBgColor'] ) : '#ffffff';
+		$zepblocks_card_border        = isset( $attributes['cardBorder'] ) ? sanitize_text_field( $attributes['cardBorder'] ) : 'none';
+		$zepblocks_card_border_radius = isset( $attributes['cardBorderRadius'] ) ? intval( $attributes['cardBorderRadius'] ) : 8;
+		$zepblocks_card_padding       = isset( $attributes['cardPadding'] ) ? intval( $attributes['cardPadding'] ) : 20;
 
 		$zepblocks_thumbnail_border_radius = isset( $attributes['thumbnailBorderRadius'] ) ? intval( $attributes['thumbnailBorderRadius'] ) : 0;
 		$zepblocks_thumbnail_height        = isset( $attributes['thumbnailHeight'] ) ? intval( $attributes['thumbnailHeight'] ) : 0;
 
-		$zepblocks_gap                  = isset( $attributes['gap'] ) ? intval( $attributes['gap'] ) : 30;
+		$zepblocks_gap = isset( $attributes['gap'] ) ? intval( $attributes['gap'] ) : 30;
 
 		// Generate unique ID for this block instance
 		$zepblocks_block_unique_id = 'zepblocks-post-block-' . uniqid();
 
 		// Enqueue Google Fonts if a custom font is selected
 		$zepblocks_google_fonts_url = '';
-		$zepblocks_enqueued_fonts = array();
+		$zepblocks_enqueued_fonts   = array();
 
 		if ( ! empty( $zepblocks_title_font_family ) ) {
 			// Extract font name from font-family string
-			$zepblocks_font_name = str_replace( "'", '', explode( ',', $zepblocks_title_font_family )[0] );
+			$zepblocks_font_name   = str_replace( "'", '', explode( ',', $zepblocks_title_font_family )[0] );
 			$zepblocks_font_handle = 'zepblocks-google-font-' . sanitize_title( $zepblocks_font_name );
 			if ( ! in_array( $zepblocks_font_handle, $zepblocks_enqueued_fonts ) ) {
-				$zepblocks_google_fonts_url = 'https://fonts.googleapis.com/css2?family=' . str_replace( ' ', '+', $zepblocks_font_name ) . '&display=swap';
+				$zepblocks_google_fonts_url = 'https://fonts.googleapis.com/css2?family=' . urlencode( $zepblocks_font_name ) . '&display=swap';
 				wp_enqueue_style( $zepblocks_font_handle, $zepblocks_google_fonts_url, array(), ZEPBLOCKS_VERSION);
 				$zepblocks_enqueued_fonts[] = $zepblocks_font_handle;
 			}
 		}
 
 		if ( ! empty( $zepblocks_excerpt_font_family ) ) {
-			$zepblocks_font_name = str_replace( "'", '', explode( ',', $zepblocks_excerpt_font_family )[0] );
+			$zepblocks_font_name   = str_replace( "'", '', explode( ',', $zepblocks_excerpt_font_family )[0] );
 			$zepblocks_font_handle = 'zepblocks-google-font-' . sanitize_title( $zepblocks_font_name );
 			if ( ! in_array( $zepblocks_font_handle, $zepblocks_enqueued_fonts ) ) {
-				$zepblocks_google_fonts_url = 'https://fonts.googleapis.com/css2?family=' . str_replace( ' ', '+', $zepblocks_font_name ) . '&display=swap';
+				$zepblocks_google_fonts_url = 'https://fonts.googleapis.com/css2?family=' . urlencode( $zepblocks_font_name ) . '&display=swap';
 				wp_enqueue_style( $zepblocks_font_handle, $zepblocks_google_fonts_url, array(), ZEPBLOCKS_VERSION);
 				$zepblocks_enqueued_fonts[] = $zepblocks_font_handle;
 			}
 		}
 
 		if ( ! empty( $zepblocks_meta_font_family ) ) {
-			$zepblocks_font_name = str_replace( "'", '', explode( ',', $zepblocks_meta_font_family )[0] );
+			$zepblocks_font_name   = str_replace( "'", '', explode( ',', $zepblocks_meta_font_family )[0] );
 			$zepblocks_font_handle = 'zepblocks-google-font-' . sanitize_title( $zepblocks_font_name );
 			if ( ! in_array( $zepblocks_font_handle, $zepblocks_enqueued_fonts ) ) {
-				$zepblocks_google_fonts_url = 'https://fonts.googleapis.com/css2?family=' . str_replace( ' ', '+', $zepblocks_font_name ) . '&display=swap';
+				$zepblocks_google_fonts_url = 'https://fonts.googleapis.com/css2?family=' . urlencode( $zepblocks_font_name ) . '&display=swap';
 				wp_enqueue_style( $zepblocks_font_handle, $zepblocks_google_fonts_url, array(), ZEPBLOCKS_VERSION);
 				$zepblocks_enqueued_fonts[] = $zepblocks_font_handle;
 			}
 		}
 
 		if ( ! empty( $zepblocks_link_font_family ) ) {
-			$zepblocks_font_name = str_replace( "'", '', explode( ',', $zepblocks_link_font_family )[0] );
+			$zepblocks_font_name   = str_replace( "'", '', explode( ',', $zepblocks_link_font_family )[0] );
 			$zepblocks_font_handle = 'zepblocks-google-font-' . sanitize_title( $zepblocks_font_name );
 			if ( ! in_array( $zepblocks_font_handle, $zepblocks_enqueued_fonts ) ) {
-				$zepblocks_google_fonts_url = 'https://fonts.googleapis.com/css2?family=' . str_replace( ' ', '+', $zepblocks_font_name ) . '&display=swap';
+				$zepblocks_google_fonts_url = 'https://fonts.googleapis.com/css2?family=' . urlencode( $zepblocks_font_name ) . '&display=swap';
 				wp_enqueue_style( $zepblocks_font_handle, $zepblocks_google_fonts_url, array(), ZEPBLOCKS_VERSION);
 				$zepblocks_enqueued_fonts[] = $zepblocks_font_handle;
 			}
@@ -194,11 +205,11 @@ class Post_Block {
 
 		// Query arguments
 		$zepblocks_args = array(
-			'post_type'      => 'post',
-			'post_status'    => 'publish',
-			'posts_per_page' => $zepblocks_posts_to_show,
-			'order'          => $zepblocks_order,
-			'orderby'        => $zepblocks_order_by,
+			'post_type'           => 'post',
+			'post_status'         => 'publish',
+			'posts_per_page'      => $zepblocks_posts_to_show,
+			'order'               => $zepblocks_order,
+			'orderby'             => $zepblocks_order_by,
 			'ignore_sticky_posts' => 1,
 		);
 
@@ -210,7 +221,7 @@ class Post_Block {
 		$zepblocks_query = new \WP_Query( $zepblocks_args );
 
 		if ( ! $zepblocks_query->have_posts() ) {
-			return '<p>' . esc_html__( 'No posts found.', 'zepblocks'  ) . '</p>';
+			return '<p>' . esc_html__( 'No posts found.', 'zepblocks' ) . '</p>';
 		}
 
 		// Start output
@@ -218,9 +229,9 @@ class Post_Block {
 
 		// Register inline styles using wp_add_inline_style
 		// Properly escape the CSS selector and property values
-		$zepblocks_safe_id = self::esc_css( $zepblocks_block_unique_id );
+		$zepblocks_safe_id          = self::esc_css( $zepblocks_block_unique_id );
 		$zepblocks_safe_hover_color = self::esc_css( $zepblocks_link_hover_color );
-		$zepblocks_custom_css = sprintf(
+		$zepblocks_custom_css       = sprintf(
 			'#{%s} { --zepblocks-link-hover-color: %s; }',
 			$zepblocks_safe_id,
 			$zepblocks_safe_hover_color
@@ -261,7 +272,7 @@ class Post_Block {
 					$zepblocks_thumb_style .= 'height:' . intval( $zepblocks_thumbnail_height ) . 'px;';
 				}
 
-				$zepblocks_image_id = get_post_thumbnail_id();
+				$zepblocks_image_id  = get_post_thumbnail_id();
 				$zepblocks_image_src = wp_get_attachment_image_src( $zepblocks_image_id, $zepblocks_thumbnail_size );
 				$zepblocks_image_url = $zepblocks_image_src ? $zepblocks_image_src[0] : '';
 				$zepblocks_image_alt = get_post_meta( $zepblocks_image_id, '_wp_attachment_image_alt', true );
@@ -308,7 +319,7 @@ class Post_Block {
 
 				if ( $zepblocks_display_author ) {
 					echo '<span class="zepblocks-post-author">';
-					echo esc_html__( 'By ', 'zepblocks'  ) . esc_html( get_the_author() );
+					echo esc_html__( 'By ', 'zepblocks' ) . esc_html( get_the_author() );
 					echo '</span>';
 				}
 
@@ -387,7 +398,7 @@ class Post_Block {
 			}
 
 			echo '<a href="' . esc_url( get_permalink() ) . '" class="zepblocks-post-read-more" style="' . esc_attr( $zepblocks_link_style ) . '">';
-			echo esc_html__( 'Read More →', 'zepblocks'  );
+			echo esc_html__( 'Read More →', 'zepblocks' );
 			echo '</a>';
 
 			echo '</div>'; // .zepblocks-post-content

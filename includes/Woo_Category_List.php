@@ -57,30 +57,30 @@ class Woo_Category_List {
 			return '<div class="zepblocks-woo-notice">' .
 				'<div class="zepblocks-woo-notice-icon">🛒</div>' .
 				'<div class="zepblocks-woo-notice-content">' .
-				'<h3>' . esc_html__( 'WooCommerce Required', 'zepblocks'  ) . '</h3>' .
-				'<p>' . esc_html__( 'Please activate the WooCommerce plugin to use this block.', 'zepblocks'  ) . '</p>' .
+				'<h3>' . esc_html__( 'WooCommerce Required', 'zepblocks' ) . '</h3>' .
+				'<p>' . esc_html__( 'Please activate the WooCommerce plugin to use this block.', 'zepblocks' ) . '</p>' .
 				'</div>' .
 				'</div>';
 		}
 
 		// Parse attributes
-		$zepblocks_columns              = isset( $attributes['columns'] ) ? intval( $attributes['columns'] ) : 3;
-		$zepblocks_categories_per_page  = isset( $attributes['categoriesPerPage'] ) ? intval( $attributes['categoriesPerPage'] ) : 9;
-		$zepblocks_order_by             = isset( $attributes['orderBy'] ) ? sanitize_text_field( $attributes['orderBy'] ) : 'name';
-		$zepblocks_order                = isset( $attributes['order'] ) ? sanitize_text_field( $attributes['order'] ) : 'ASC';
-		$zepblocks_hide_empty           = isset( $attributes['hideEmpty'] ) ? (bool) $attributes['hideEmpty'] : true;
-		$zepblocks_show_image           = isset( $attributes['showImage'] ) ? (bool) $attributes['showImage'] : true;
-		$zepblocks_show_count           = isset( $attributes['showCount'] ) ? (bool) $attributes['showCount'] : true;
-		$zepblocks_image_size           = isset( $attributes['imageSize'] ) ? sanitize_text_field( $attributes['imageSize'] ) : 'medium';
-		$zepblocks_exclude_categories   = isset( $attributes['excludeCategories'] ) ? array_map( 'intval', $attributes['excludeCategories'] ) : array();
+		$zepblocks_columns             = isset( $attributes['columns'] ) ? intval( $attributes['columns'] ) : 3;
+		$zepblocks_categories_per_page = isset( $attributes['categoriesPerPage'] ) ? intval( $attributes['categoriesPerPage'] ) : 9;
+		$zepblocks_order_by            = isset( $attributes['orderBy'] ) ? sanitize_text_field( $attributes['orderBy'] ) : 'name';
+		$zepblocks_order               = isset( $attributes['order'] ) ? sanitize_text_field( $attributes['order'] ) : 'ASC';
+		$zepblocks_hide_empty          = isset( $attributes['hideEmpty'] ) ? (bool) $attributes['hideEmpty'] : true;
+		$zepblocks_show_image          = isset( $attributes['showImage'] ) ? (bool) $attributes['showImage'] : true;
+		$zepblocks_show_count          = isset( $attributes['showCount'] ) ? (bool) $attributes['showCount'] : true;
+		$zepblocks_image_size          = isset( $attributes['imageSize'] ) ? sanitize_text_field( $attributes['imageSize'] ) : 'medium';
+		$zepblocks_exclude_categories  = isset( $attributes['excludeCategories'] ) ? array_map( 'intval', $attributes['excludeCategories'] ) : array();
 
 		// Build category query args
 		$zepblocks_tax_args = array(
-			'taxonomy'     => 'product_cat',
-			'orderby'      => $zepblocks_order_by,
-			'order'        => $zepblocks_order,
-			'hide_empty'   => $zepblocks_hide_empty,
-			'number'       => $zepblocks_categories_per_page,
+			'taxonomy'   => 'product_cat',
+			'orderby'    => $zepblocks_order_by,
+			'order'      => $zepblocks_order,
+			'hide_empty' => $zepblocks_hide_empty,
+			'number'     => $zepblocks_categories_per_page,
 		);
 
 		// Get all categories
@@ -88,7 +88,7 @@ class Woo_Category_List {
 
 		// Filter out excluded categories to avoid performance issues with exclude parameter
 		if ( empty( $zepblocks_all_categories ) || is_wp_error( $zepblocks_all_categories ) ) {
-			return '<div class="wpl-no-categories">' . esc_html__( 'No categories found.', 'zepblocks'  ) . '</div>';
+			return '<div class="wpl-no-categories">' . esc_html__( 'No categories found.', 'zepblocks' ) . '</div>';
 		}
 
 		// Filter out excluded categories
@@ -104,7 +104,7 @@ class Woo_Category_List {
 		}
 
 		if ( empty( $zepblocks_categories ) || is_wp_error( $zepblocks_categories ) ) {
-			return '<div class="wpl-no-categories">' . esc_html__( 'No categories found.', 'zepblocks'  ) . '</div>';
+			return '<div class="wpl-no-categories">' . esc_html__( 'No categories found.', 'zepblocks' ) . '</div>';
 		}
 
 		$zepblocks_column_class = 12 / $zepblocks_columns;
@@ -113,7 +113,8 @@ class Woo_Category_List {
 		?>
 		<div class="zepblocks-product-category">
 			<div class="zepblocks-row cats">
-				<?php foreach ( $zepblocks_categories as $zepblocks_category ) :
+				<?php
+				foreach ( $zepblocks_categories as $zepblocks_category ) :
 					$zepblocks_term_id       = $zepblocks_category->term_id;
 					$zepblocks_term_link     = get_term_link( $zepblocks_category );
 					$zepblocks_category_name = $zepblocks_category->name;
@@ -154,8 +155,8 @@ class Woo_Category_List {
 												<?php
 													echo esc_html(
 														$zepblocks_product_count === 1
-															? __( 'product', 'zepblocks'  )
-															: __( 'products', 'zepblocks'  )
+															? __( 'product', 'zepblocks' )
+															: __( 'products', 'zepblocks' )
 													);
 												?>
 											</p>

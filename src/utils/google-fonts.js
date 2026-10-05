@@ -65,7 +65,7 @@ export function loadGoogleFont( fontFamily ) {
 	const link  = document.createElement( 'link' );
 	link.id     = linkId;
 	link.rel    = 'stylesheet';
-	link.href   = `https://fonts.googleapis.com/css2?family=${ fontName.replace( /\s+/g, '+' ) }&display=swap`;
+	link.href   = `https://fonts.googleapis.com/css2?family=${ encodeURIComponent( fontName ).replace( /%20/g, '+' ) }&display=swap`;
 
 	document.head.appendChild( link );
 }

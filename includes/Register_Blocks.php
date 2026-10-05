@@ -1,10 +1,22 @@
 <?php
+/**
+ * Registers the ZepBlocks block category and all block types.
+ *
+ * @package ZepBlocks
+ */
+
 namespace ZepBlocks;
 
 defined( 'ABSPATH' ) || exit;
 
+/**
+ * Registers the ZepBlocks block category and every block shipped with the plugin.
+ */
 class Register_Blocks {
 
+    /**
+     * Hooks block category and block registration into WordPress.
+     */
     public function __construct() {
         add_action( 'block_categories_all', array( $this, 'zepblock_register_category' ) );
         add_action( 'init', array( $this, 'zepblock_register_blocks' ) );
@@ -12,6 +24,9 @@ class Register_Blocks {
 
     /**
      * Register block category
+     *
+     * @param array $block_categories Existing block categories registered with WordPress.
+     * @return array Block categories including the ZepBlock category.
      */
     public function zepblock_register_category( $block_categories ) {
         $category_slugs = wp_list_pluck( $block_categories, 'slug' );

@@ -81,7 +81,7 @@ export default function Edit({ attributes, setAttributes }) {
                             label={__('Link (Optional)', 'zepblocks' )}
                             value={link}
                             onChange={(value) => setAttributes({ link: value })}
-                            placeholder="https://example.com"
+                            placeholder={__('https://example.com', 'zepblocks' )}
                         />
                     </PanelRow>
                     {link && (

@@ -1,4 +1,9 @@
 <?php
+/**
+ * Registers and enqueues the plugin's shared frontend/editor assets.
+ *
+ * @package ZepBlocks
+ */
 
 namespace ZepBlocks;
 
@@ -12,7 +17,7 @@ class Assets {
     /**
      * Initialize the class
      */
-    function __construct() {
+    public function __construct() {
         add_action('wp_enqueue_scripts', array($this, 'register_admin_assets'));
         add_action('enqueue_block_assets', array($this, 'register_admin_assets'));
     }
@@ -20,7 +25,7 @@ class Assets {
     /**
      * Register admin assets
      */
-    function register_admin_assets() {
+    public function register_admin_assets() {
         // Only enqueue if zepblock slider block is present
         wp_enqueue_style(
             'common-css',

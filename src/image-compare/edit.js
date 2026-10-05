@@ -174,8 +174,8 @@ export default function Edit({ attributes, setAttributes }) {
                         </div>
                     ) : (
                         <div className="zepblock-image-container">
-                            <span className="label before-label button">Before</span>
-                            <span className="label after-label button">After</span>
+                            <span className="label before-label button">{__('Before', 'zepblocks' )}</span>
+                            <span className="label after-label button">{__('After', 'zepblocks' )}</span>
 
                             <div className="zepblock-image-comparison">
                                 <figure

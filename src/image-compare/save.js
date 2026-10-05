@@ -1,6 +1,7 @@
 /**
  * WordPress Dependencies
  */
+import { __ } from '@wordpress/i18n';
 import { useBlockProps } from '@wordpress/block-editor';
 
 /**
@@ -19,8 +20,8 @@ export default function Save({ attributes }) {
             <div className="zepblock-image-wrap">
                 {beforeImageUrl && afterImageUrl && (
                     <div className="zepblock-image-container">
-                        <span class="label before-label button" style="visibility: visible;">Before</span>
-                        <span class="label after-label button" style="visibility: visible;">After</span>
+                        <span class="label before-label button" style="visibility: visible;">{__('Before', 'zepblocks' )}</span>
+                        <span class="label after-label button" style="visibility: visible;">{__('After', 'zepblocks' )}</span>
 
                         <div className="zepblock-image-comparison">
                             <figure
