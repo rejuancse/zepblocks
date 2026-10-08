@@ -127,7 +127,7 @@ You can submit block requests via the [WordPress.org support forum](https://word
 
 == Changelog ==
 
-= 1.0.1 =
+= 1.0.1 [8/10/2026] =
 * New: Breaking News block
 * New: Count Down block
 * Security: Input sanitization hardening and Google Fonts URL encoding
